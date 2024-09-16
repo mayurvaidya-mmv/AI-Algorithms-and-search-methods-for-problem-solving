@@ -1,3 +1,5 @@
+Week 7 contains following topics:
+
 Automated Domain Independent Planning
 
 The Blocks World Domain
