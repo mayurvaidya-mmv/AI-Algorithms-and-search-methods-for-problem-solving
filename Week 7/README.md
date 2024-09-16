@@ -1,4 +1,4 @@
-Week 7 contains following topics:
+Week 8 contains following topics:
 
 Automated Domain Independent Planning
 
