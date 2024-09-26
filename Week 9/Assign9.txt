@@ -1,0 +1,284 @@
+Assignment No 9:
+
+
+BEGIN GROUP 1
+The Blocks World defines the following predicates and planning operators.
+
+PREDICATES
+
+    on(X,Y)    - X is directly placed on Y.
+    onTable(X) - X is on the table.
+    clear(X)   - X has nothing above it, it is clear.
+    holding(X) - The arm is holding X.
+    armEmpty   - The arm is not holding any block, it is empty.
+
+OPERATORS
+
+Pickup(X) - Pick up X from the table.
+    Preconditions: { armEmpty, clear(X), onTable(X) }
+    Add-Effects  : { holding(X) }
+    Del-Effects  : { armEmpty, onTable(X) }
+
+Putdown(X) - Place X on the table.
+    Preconditions: { holding(X) }
+    Add-Effects  : { armEmpty, onTable(X) }
+    Del-Effects  : { holding(X) }
+
+Unstack(X,Y) - Pick up X which is directly on Y.
+    Preconditions: { armEmpty, clear(X), on(X,Y) }
+    Add-Effects  : { clear(Y), holding(X) }
+    Del-Effects  : { armempty, on(X,Y) }
+
+Stack(X,Y) - Place X on Y.
+    Preconditions: { holding(X), clear(Y) }
+    Add-Effects  : { armEmpty, on(X,Y) }
+    Del-Effects  : { holding(X), clear(Y) }
+
+
+Consider the following planning problem being solved by the Graphplan algorithm.
+
+		
+
+Start: { onTable(E), onTable(C),
+         clear(A), clear(D), clear(B),
+         on(A,E), on(D,C),
+         holding(B) }
+
+Goal: { on(C,A), on(B,D) }
+
+
+Fill in the mutex links and extend this plan-graph as needed and then answer the questions in
+this group.
+
+
+
+1 point
+Which of the following are mutex action pairs in Layer 1?
+ Putdown(B), Stack(B,A)
+ Putdown(B), Stack(B,D)
+ Putdown(B), nop-4
+ Putdown(B), nop-6
+Partially Correct.
+Score: 0.66
+Accepted Answers:
+Putdown(B), Stack(B,A)
+Putdown(B), Stack(B,D)
+Putdown(B), nop-4
+1 point
+Which of the following are mutex proposition pairs in Layer 1?
+ holding(B), armEmpty
+ on(D,C), armEmpty
+ onTable(D), on(B,A)
+ holding(B), clear(A)
+Partially Correct.
+Score: 0.5
+Accepted Answers:
+holding(B), armEmpty
+onTable(D), on(B,A)
+1 point
+Which of the following are applicable actions in Layer 2?
+ Pickup(B)
+ Unstack(A,E)
+ Unstack(B,A)
+ Stack(B,D)
+Partially Correct.
+Score: 0.25
+Accepted Answers:
+Pickup(B)
+Unstack(A,E)
+Unstack(B,A)
+Stack(B,D)
+1 point
+Mutex relation in a planning graph __________ .
+ contains all possible mutex conditions that occur in a given problem
+ grows monotonically as we move from layer k to layer k+1, for all k
+ describes all action pairs that can be executed in parallel
+ None of the above
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+None of the above
+1 point
+Select the correct statement about GraphPlan.
+ It will find a plan if one exists.
+ In some cases it may not find a plan even when a plan exists.
+ It always returns an optimal plan if such a plan exists.
+ It may not always return an optimal plan.
+ Length of the plan depends on the ordering of the subgoals.
+Partially Correct.
+Score: 0.5
+Accepted Answers:
+It will find a plan if one exists.
+It always returns an optimal plan if such a plan exists.
+1 point
+GraphPlan terminates __________ .
+ when the goal becomes true in a proposition layer.
+ when two consecutive layers have the same set of propositions.
+ when two consecutive layers have the same set of mutual exclusions.
+ when two consecutive layers have the same set of propositions and the same set of mutual exclusions.
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+when two consecutive layers have the same set of propositions and the same set of mutual exclusions.
+
+END GROUP 1
+
+BEGIN GROUP 2
+
+1 point
+The AO* algorithm, in each iteration, __________ .
+ expands the lowest-cost decomposition
+ expands the highest-cost decomposition
+ sometimes expands the lowest-cost decomposition and other times expands the highest-cost decomposition
+ does not pay attention to the cost of the decomposition
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+expands the lowest-cost decomposition
+1 point
+In AO* algorithm, __________ .
+ the children of OR node can be expanded in any order
+ the lowest-cost child of OR node is expanded first
+ the highest-cost child of OR node is expanded first
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+the lowest-cost child of OR node is expanded first
+1 point
+In AO* algorithm, __________ .
+ the children of AND node can be expanded in any order
+ the lowest-cost child of AND node is expanded first
+ the highest-cost child of AND node is expanded first
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+the children of AND node can be expanded in any order
+1 point
+An AND-OR graph is a graph where __________ .
+ each node is a problem or a goal
+ edges from nodes transform a problem into one or more simpler problems
+ solved nodes stand for primitive problems that do not need further work
+ the solution is always a path from the start node to a solved node
+Yes, the answer is correct.
+Score: 1
+Accepted Answers:
+each node is a problem or a goal
+edges from nodes transform a problem into one or more simpler problems
+solved nodes stand for primitive problems that do not need further work
+1 point
+In a AND-OR graph rooted at S, a node C (at some depth) has parents P, Q (at some depth). And P and C have been expanded in some order, and Q has been read but not expanded yet. During backward phase of AO* algorithm, when the cost of C is updated, that update may propagate to __________ .
+ Node P
+ Node Q
+ Root node S
+Partially Correct.
+Score: 0.5
+Accepted Answers:
+Node P
+Root node S
+1 point
+When is the root node S considered to be solved by the AO* algorithm?
+ As soon as a leaf node is solved.
+ As soon as a marked child of the start node is solved.
+ As soon as one of the children of the start node is solved.
+ When the start node retains the same value in two consecutive iterations.
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+As soon as a marked child of the start node is solved.
+
+END GROUP 2
+
+BEGIN GROUP 3
+
+The figure below is an AND-OR graph that depicts how a problem S can be decomposed and transformed into one or more, hopefully simpler, problems. Each node has a unique label (S, A, B, …). The number in each node is the heuristic estimate of the cost of solving that node.
+
+Nodes in double circles are primitive nodes, and their values are actual costs. Observe that a primitive node is added to the graph by its parent when the parent is expanded, and the primitive node is labeled as SOLVED and it will not be expanded subsequently.
+
+Tie-breaker 1: If several nodes have the same cost then break the tie using node labels.
+Tie-breaker 2: For AND nodes, select the unsolved branch with the highest cost.
+
+
+
+The cost of each edge is 2 units.
+Solve the problem using AO* algorithm, then answer the questions below.
+
+In the given AND-OR graph, how many full solutions (full decompositions) exist for the problem S? Count the number of full solutions.
+
+Enter a number.
+4
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: Numeric) 9
+1 point
+The first node expanded is S, what is the 2nd noded expanded by AO* algorithm?
+
+Enter a node label.
+Answer format: X
+C
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: String) D
+1 point
+After the 2nd node is expanded, enter the cost of the 2nd node followed by the cost of node S as a comma separated list.
+
+Enter a comma separated list of numbers.
+Answer format: 4,2
+42,42
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: String) 38,34
+1 point
+Starting with S, list the nodes in the order they are expanded by AO* algorithm till it terminates. Observe that primitive nodes are not expanded. And use tie-breakers where needed.
+
+Enter a list of node labels as a comma separated list.
+Answer format: X,Y,Z
+S,C,B,D,G
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: String) S,D,A,G,F
+1 point
+List the values of the start node S after every expansion listed above.
+
+Enter a list of numbers.
+Answer format: 4,1,4
+26,16,16,16,16
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: String) 32,34,40,48,54
+1 point
+What is the cost of the solution found by AO*?
+
+Enter a number.
+16
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: Numeric) 54
+1 point
+What is the solution found by AO*? List the nodes in the solution in ALPHABETICAL ORDER.
+
+Enter a comma separated list of node labels in ALPHABETICAL ORDER.
+Answer format: A,B,C
+C, E, H, S
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+(Type: String) D,F,G,I,J
+(Type: String) D,F,G,I,J,S
+1 point
+1 point
+Select the true statements
+ AO* found the optimal solution.
+ AO* did not find the optimal solution.
+ Cannot be determined.
+No, the answer is incorrect.
+Score: 0
+Accepted Answers:
+AO* did not find the optimal solution.
+
+END GROUP 3
