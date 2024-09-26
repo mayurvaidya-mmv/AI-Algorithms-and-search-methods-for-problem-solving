@@ -1,0 +1,21 @@
+Rule Based Expert Systems
+
+The Inference Engine
+
+The OPS5 Language
+
+Conflict Resolution
+
+Business Rule Management Systems
+
+The Rete Net
+
+Rete Algorithm: Optimizing the Match
+
+Rete Algorithm: Conflict Resolution
+
+Lecture materials
+
+Practice: Week 10 Practice Assignment: Rete Algorithm
+
+Quiz: Week 10: Assignment 10
