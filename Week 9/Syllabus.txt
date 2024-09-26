@@ -1,0 +1,25 @@
+Means-Ends Analysis
+
+The Planning Graph
+
+Algorithm Graphplan
+
+Problem Decomposition
+
+Algorithm AO*
+
+AO*: An Illustration
+
+Lecture materials
+
+Practice: Week 09 Practice Assignment: GraphPlan Example 1
+
+Practice: Week 09 Practice Assignment: Problem Decomposition – Counting
+
+Practice: Week 09 Practice Assignment: AO* Example 1
+
+Practice: Week 09 Practice Assignment AO* Example 2 (Small)
+
+Practice: Week 09 Practice Assignment AO* Example 3 (Small)
+
+Quiz: Week 9: Assignment 9
