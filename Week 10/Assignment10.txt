@@ -1,0 +1,52 @@
+Assignment No: 10
+1).In Production Systems, refractoriness refers to __________ .
+ the ability to refactor the patterns in a rule in order to create an efficient Rete Net
+ the ability to prevent a matching rule-data tuple from firing repeatedly
+ the process of refactoring the cycle into Match, Resolve, and Execute phases
+ all of the above
+
+2).Select the correct options. In a Production System, the working memory __________ .
+ acts as a short-term memory
+ acts as a long-term memory where all facts are stored
+ may get updated after a rule is fired
+ is cleaned up after each rule is fired to prevent the same rule from firing on the same data
+
+3).Select the correct options. In a Production System, rules ________ .
+ act as a short-term memory
+ act as a long-term memory
+ when fired in different order may produce different results
+ will fire repeatedly on old data, as long as the working memory retains the old data
+
+4).What does a conflict set contain?
+ Rule-data tuples for different rules that match the same set of WMEs.
+ Rule-data tuples for the same rule that matches different sets of WMEs.
+ Rule-data tuples that are ready to fire in a given cycle.
+ None of the above
+
+5).In a Match-Resolve-Execute cycle, the Match phase ______________ .
+ decides which WMEs reside in which node in the Rete Net
+ selects the rule-data tuple that will fire in the current cycle
+ prepares rule-data tuples ready to fire in the current cycle
+ updates the Working Memory for each INSERT/MODIFY/DELETE action
+
+6).When a WME enters a Rete Net ______________.
+ it resides in each alpha node along a path that matches the WME
+ it resides in the deepest alpha node along each path that leads to a rule
+ it may reside in several alpha nodes
+ it resides only in one alpha node in the Rete Net
+
+7).After the first round of rule firing, the newly created WME is _________ .
+ (nat ^a 0 ^b 1)
+ (nat ^b 0 ^c 3)
+ (nat ^b 3 ^c 0)
+
+8).After rule-2 is fired for the first time, the newly created WME is _________ .
+ (nat ^b 3 ^c 0)
+ (nat ^b 2 ^c 3)
+ (nat ^b 1 ^c 6)
+
+9).In total, rule-2 is fired __________ times.
+
+Enter a number.
+Answer format: 17
+
