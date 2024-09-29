@@ -50,3 +50,68 @@ Assignment No: 10
 Enter a number.
 Answer format: 17
 
+10).The value of the attributes b and c in the last WME are __________ .
+
+Enter the values of b and c as a comma separated list.
+Answer format: 5,7
+
+
+11).WME 202 resides at _________ .
+ A5
+ A8
+ A9
+ A13
+
+12).WME 203 resides at _________ .
+ A5
+ A8
+ A9
+ A13
+
+13).List the WMEs residing at A8 _________ . Identify their timestamps.
+
+Enter the timestamps in sorted order as a comma separated list.
+Enter Nil if there are no elements.
+Answer format: 100,200,300
+
+14).Select the rule-data tuples that will be present in the conflict set.
+ R1,201,204,208
+ R2,201,204,208
+ R2,203,207,211
+ R2,205,209,212
+ R3,202,206,210
+ R4,202,206,210
+
+15).Which WMEs match multiple rules?
+ 201
+ 202
+ 203
+ 204
+ 205
+ 206
+ 207
+ 208
+ 209
+ 210
+ 211
+ 212
+
+16).The number of instances of R3 in the conflict set is _________ .
+
+Enter a number.
+Answer format: 17
+
+17).The number of instances of R4 in the conflict set is _________ .
+
+Enter a number.
+Answer format: 17
+
+18).If the Inference Engine uses Specificity as the conflict resolution strategy then identify the rule-data tuples that will be ready to fire. If multiple rule-data tuples qualify then select one.
+
+Enter a comma separated list with a rule label followed by timestamps in SORTED ORDER.
+Answer format: R1,100,200,300
+
+19).If the Inference Engine uses Recency as the conflict resolution strategy then identify the rule-data tuples that will be ready to fire. If multiple rule-data tuples qualify then select one.
+
+Enter a comma separated list with a rule label followed by timestamps in sorted order.
+Answer format: R1,100,200,300
